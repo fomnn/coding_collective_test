@@ -25,8 +25,9 @@ defineProps<{
         <TableHead class="">
           Amount
         </TableHead>
-        <TableHead>Transaction Type</TableHead>
         <TableHead>User</TableHead>
+        <TableHead>Transaction Type</TableHead>
+        <TableHead>Status</TableHead>
         <TableHead class="text-right">
           Time
         </TableHead>
@@ -38,8 +39,9 @@ defineProps<{
         <TableCell class="">
           {{ transaction.amount }}
         </TableCell>
-        <TableCell>{{ transaction.type }}</TableCell>
         <TableCell>{{ transaction.user_fullname }}</TableCell>
+        <TableCell>{{ transaction.type }}</TableCell>
+        <TableCell>{{ transaction.status === "1" ? 'Success' : 'Failed' }}</TableCell>
         <TableCell class="text-right">
           {{new Date(transaction.timestamp).toLocaleDateString("id") }} {{ new Date(transaction.timestamp).toLocaleTimeString("id") }}
         </TableCell>
