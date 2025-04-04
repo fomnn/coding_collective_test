@@ -18,6 +18,10 @@ class PaymentGatewayService
 
     public function initiatePayment(string $paymentMethod, array $paymentData)
     {
+         // TODO: Implement third party payment gateway integration
+        // Required parameters: orderId, amount, timestamp
+        // Authorization: Bearer Token
+
         if ($paymentMethod !== 'bank_transfer') {
             throw new InvalidArgumentException('Invalid payment method');
         }
@@ -57,6 +61,10 @@ class PaymentGatewayService
 
     public function initiateWithdrawal(array $data)
     {
+         // TODO: Implement third party payment gateway integration
+        // Required parameters: orderId, amount, timestamp
+        // Authorization: Bearer Token
+
         $isSuccess = rand(0, 1) === 1;
 
         if (!$isSuccess) {
